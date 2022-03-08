@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom'
 import GithubContext from '../context/github/GithubContext'
 
 function User() {
-  const { getUser, user, loading, getUserRepos } = useContext(GithubContext)
+  const { getUser, user, loading, getUserRepos, repos } =
+    useContext(GithubContext)
 
   const params = useParams()
 
@@ -155,7 +156,7 @@ function User() {
             </div>
           </div>
         </div>
-        <RepoList />
+        <RepoList repos={repos} />
       </div>
     </>
   )
